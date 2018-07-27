@@ -18,7 +18,8 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit() {
     // this.getHeroes();
-    this.getHeroesObservable();
+    // this.getHeroesObservable();
+    this.getHeroesHttp();
   }
 
   // onSelect(hero: Hero): void {
@@ -35,4 +36,8 @@ export class HeroesComponent implements OnInit {
       .subscribe(heroes => this.heroes = heroes);
   }
 
+  getHeroesHttp(): void {
+    this.heroService.getHeroesHttp()
+      .subscribe(heroes => this.heroes = heroes);
+  }
 }
